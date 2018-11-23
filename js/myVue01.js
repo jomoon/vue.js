@@ -51,4 +51,28 @@ window.onload= function() {
         }
       }
     });
+
+    
+    // Vue.component("todo-item", {
+    //   template : '<li>这是一个代办项目</li>'
+    // })
+
+    Vue.component("todo-item", {
+      props :['todo'],
+      template : '<li>{{todo.text}}</li>'
+    })
+
+  
+
+
+    var app6 = new Vue({
+      el: "#app-6",
+      data : {
+        groceryList:[
+          {id :0,text:'蔬菜'},
+          {id : 1,text :'奶酪'},
+          {id:2,text:'whatever people eat!'}
+        ]
+      }
+    })
 }

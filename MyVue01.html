@@ -47,6 +47,14 @@
         <p>{{message}}</p>
         <button v-on:click="reverseMessage">逆转消息</button>
       </div>
+      <div id="app-6">
+        <ol>
+          <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+            
+          </todo-item>
+        </ol>
+      </div>
+      
       
   </body>
 </html>
