@@ -1,0 +1,72 @@
+<html>
+  <head>
+      <title>第二个VueDemo</title>
+      <meta charset="utf-8"/>
+      <script src="https://unpkg.com/vue"></script>
+     
+  </head>
+
+  <body>
+    <div id = "app1">
+        <ul>
+          <li v-for= "(value ,key, index) in object">
+            {{index}}.{{key}}:{{value}}
+          </li>
+        </ul>
+    </div>
+
+    <div id="app2">
+      <ul>
+        <li v-for="value of evenNumber">{{value}}</li>
+      </ul>
+      <br/>
+      <ul>
+        <li v-for="n in even(numbers)">{{n}}</li>
+      </ul>
+
+      <span v-for="n in 10">{{n}},</span>
+
+      <ul>
+        <li v-for="value of evenNumber" v-if="value === 2">{{value}}</li>
+      </ul>
+    </div>
+
+
+    <div id="todo-list-example">
+      <form v-on:submit.prevent="addNewTodo">
+        <label for="new-todo">Add a todo</label>
+        <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the Cat">
+        <button>Add</button>
+      </form>
+
+      <ul>
+        <li is="todo-item"
+            v-for="(todo,index) in todos"
+            v-bind:key="todo.id"
+            v-bind:title="todo.title"
+            v-on:remove="todos.splice(index,1)"></li>
+      </ul>
+    </div>
+
+    <div id="example-1">
+      <button v-on:click="counter += 1">Add 1</button>
+      <p>The button above has been clicked {{counter}} times.</p>
+
+      <button v-on:click="add2">Add 2</button>
+      <p>The button above has been clicked {{counter2}} times.</p>
+
+      <button v-on:click="warn('Form cannot be submitted yet.',$event)">Submit</button>
+    </div>
+
+
+    <div id="app3">
+      <span>Multiline message is:</span>
+      <p style="white-space: pre-line;">{{message}}</p>
+      <br/>
+      <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    </div>
+
+    <script src="js/myView02.js" type="text/javascript"></script>
+  </body>
+
+</html>

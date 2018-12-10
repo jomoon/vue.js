@@ -57,9 +57,9 @@ window.onload= function() {
     //   template : '<li>这是一个代办项目</li>'
     // })
 
-    Vue.component("todo-item", {
-      props :['todo'],
-      template : '<li>{{todo.text}}</li>'
+    Vue.component("list", {
+      props :['todo1'],
+      template : '<li>{{todo1.text}}</li>'
     })
 
   
