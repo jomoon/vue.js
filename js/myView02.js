@@ -83,6 +83,16 @@ var example1 = new Vue({
 var app3 = new Vue({
     el:"#app3",
     data: {
-        message : ""
+        message : "",
+        checked :false,
+        checkedNames: [],
+        selected:"",
+        // 初始值并不在选项中那么 这将为 空
+        selected2: "",
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+          ]
     }
 })
